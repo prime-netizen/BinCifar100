@@ -91,7 +91,7 @@ class Net(nn.Module):
             
                 nn.BatchNorm2d(192, eps=1e-4, momentum=0.1, affine=False),
             
-                nn.Conv2d(192,  10, kernel_size=1, stride=1, padding=0),
+                nn.Conv2d(192,  100, kernel_size=1, stride=1, padding=0),
                 nn.ReLU(inplace=True),
                 nn.AvgPool2d(kernel_size=8, stride=1, padding=0),
                 )
@@ -102,7 +102,7 @@ class Net(nn.Module):
                 if hasattr(m.weight, 'data'):
                     m.weight.data.clamp_(min=0.01)
         x = self.xnor(x)
-        x = x.view(x.size(0), 10)
+        x = x.view(x.size(0), 100)
         return x
     
 class Bin_Conv2d(nn.Module):
@@ -185,7 +185,7 @@ class Net_BN(nn.Module):
            
                 nn.BatchNorm2d(192, eps=1e-4, momentum=0.1, affine=False),
             
-                nn.Conv2d(192,  10, kernel_size=1, stride=1, padding=0),
+                nn.Conv2d(192,  100, kernel_size=1, stride=1, padding=0),
                 nn.ReLU(inplace=True),
                 nn.AvgPool2d(kernel_size=8, stride=1, padding=0),
                 )
@@ -196,7 +196,7 @@ class Net_BN(nn.Module):
                 if hasattr(m.weight, 'data'):
                     m.weight.data.clamp_(min=0.01)
         x = self.xnor(x)
-        x = x.view(x.size(0), 10)
+        x = x.view(x.size(0), 100)
         return x
 
     
