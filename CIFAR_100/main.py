@@ -149,14 +149,14 @@ if __name__=='__main__':
         transforms.ToTensor(),
         transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))
         ])
-    trainset = torchvision.datasets.CIFAR10(args.data, train=True, download=True, transform=to_tensor_transformer)
+    trainset = torchvision.datasets.CIFAR100(args.data, train=True, download=True, transform=to_tensor_transformer)
 
     #trainset = data.dataset(root=args.data, train=True)
     trainloader = torch.utils.data.DataLoader(trainset, batch_size=128,
             shuffle=True, num_workers=2, **kwargs)
 
     #testset = data.dataset(root=args.data, train=False)
-    testset = torchvision.datasets.CIFAR10(args.data, train=False, download=True, transform=to_tensor_transformer)
+    testset = torchvision.datasets.CIFAR100(args.data, train=False, download=True, transform=to_tensor_transformer)
     
     #Comment out to infer for one image only
     #x=[1]
