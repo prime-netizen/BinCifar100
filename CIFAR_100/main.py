@@ -17,7 +17,7 @@ from torchvision import transforms
 import math
 from torchsummary import summary
 
-from models import nin,nin_norelu
+from models import nin,nin_norelu,bin_vgg
 from torch.autograd import Variable
 
 def save_state(model, best_acc):
