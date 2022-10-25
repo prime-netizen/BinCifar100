@@ -105,7 +105,7 @@ class Net(nn.Module):
                 #nn.ReLU(True),
                 #nn.Linear(512, 512),
                 #nn.ReLU(True),
-                nn.Linear(512, 10),
+                nn.Linear(512, 100),
             )
                 
             
@@ -208,7 +208,7 @@ class Net_BN(nn.Module):
                 #nn.ReLU(True),
                 #nn.Linear(512, 512),
                 #nn.ReLU(True),
-                nn.Linear(512, 10),
+                nn.Linear(512, 100),
                 )
 
     def forward(self, x):
