@@ -175,7 +175,10 @@ if __name__=='__main__':
         model_old = nin.NIN_train()
     elif args.arch =='nin_norelu':
         model = nin_norelu.Net_BN()
-        model_old = nin_norelu.Net() 
+        model_old = nin_norelu.Net()
+    elif args.arch == 'vgg':
+        model = bin_vgg.Net_BN()
+        model_old = bin_vgg.Net() 
     else:
         raise Exception(args.arch+' is currently not supported')
 
