@@ -76,21 +76,22 @@ class Net(nn.Module):
                 nn.Conv2d(3, 64, kernel_size=3, padding=1),
                 nn.BatchNorm2d(64, eps=1e-4, momentum=0.1, affine=True),
                 nn.ReLU(inplace=True),
-                #nn.MaxPool2d(kernel_size=2, stride=2),                
+                nn.MaxPool2d(kernel_size=2, stride=2),  
+            
                 BinConv2d(64, 128, kernel_size=3, stride=1,padding=1),
                 nn.MaxPool2d(kernel_size=2, stride=2),
 
-                BinConv2d( 128, 128, kernel_size=3, stride=1,padding=1),
                 BinConv2d( 128, 256, kernel_size=3, stride=1,padding=1),
+                BinConv2d( 256, 256, kernel_size=3, stride=1,padding=1),
                 nn.MaxPool2d(kernel_size=2, stride=2),
                 
-                BinConv2d( 256, 256, kernel_size=3, stride=1,padding=1),                
+                BinConv2d( 256, 512, kernel_size=3, stride=1,padding=1),                
                 BinConv2d( 512, 512, kernel_size=3, stride=1,padding=1),
                 nn.MaxPool2d(kernel_size=2, stride=2),
 
-                BinConv2d( 512, 512, kernel_size=3, stride=1,padding=1),
-                BinConv2d( 512, 512, kernel_size=3, stride=1,padding=1),
-                nn.MaxPool2d(kernel_size=2, stride=2),
+                #BinConv2d( 512, 512, kernel_size=3, stride=1,padding=1),
+                #BinConv2d( 512, 512, kernel_size=3, stride=1,padding=1),
+                #nn.MaxPool2d(kernel_size=2, stride=2),
             
                 BinConv2d( 512, 512, kernel_size=3, stride=1,padding=1),
                 BinConv2d( 512, 512, kernel_size=3, stride=1,padding=1),
