@@ -147,7 +147,7 @@ if __name__=='__main__':
     kwargs={'pin_memory':True} if torch.cuda.is_available() else {}
     to_tensor_transformer = transforms.Compose([
         transforms.ToTensor(),
-        transforms.Normalize((0.5,0.5,0.5),(0.5,0.5,0.5))
+        transforms.Normalize((0.438,0.418,0.377),(0.300,0.287,0.294))
         ])
     trainset = torchvision.datasets.CIFAR100(args.data, train=True, download=True, transform=to_tensor_transformer)
 
